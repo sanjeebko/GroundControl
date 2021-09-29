@@ -1,0 +1,15 @@
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\Sanjeeb.Interview.Service.deps.json
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\Sanjeeb.Interview.Service.dll
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\ref\Sanjeeb.Interview.Service.dll
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\Sanjeeb.Interview.Service.pdb
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.csproj.AssemblyReference.cache
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.AssemblyInfoInputs.cache
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.AssemblyInfo.cs
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.csproj.CoreCompileInputs.cache
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.dll
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\ref\Sanjeeb.Interview.Service.dll
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.pdb
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\GroundControl.Interview.SeniorDeveloper.Model.dll
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\bin\Debug\net5.0\GroundControl.Interview.SeniorDeveloper.Model.pdb
+C:\Users\sojha\Source\Repos\GroundControl\SeniorDeveloper\Sanjeeb.Interview.Service\obj\Debug\net5.0\Sanjeeb.Interview.Service.csproj.CopyComplete

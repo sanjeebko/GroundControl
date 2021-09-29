@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Sanjeeb.Interview.Service/1.0.0": {
+        "dependencies": {
+          "GroundControl.Interview.SeniorDeveloper.Model": "1.0.0"
+        },
+        "runtime": {
+          "Sanjeeb.Interview.Service.dll": {}
+        }
+      },
+      "GroundControl.Interview.SeniorDeveloper.Model/1.0.0": {
+        "runtime": {
+          "GroundControl.Interview.SeniorDeveloper.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sanjeeb.Interview.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GroundControl.Interview.SeniorDeveloper.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

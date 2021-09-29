@@ -1,0 +1,150 @@
+﻿@model Sanjeeb.Interview.Web.ViewModels.ViewModelBooking
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+    <h4>Select Bookings</h4>
+
+    <div class="jumbotron">
+
+        <form asp-controller="Booking" asp-action="Index" method="post" role="form">
+            <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="BookingTypes" class="control-label"></label>
+                <input type="hidden" name="bookingTypeId" id="bookingTypeId" value="" />
+                <select name="BookingType" id="BookingType" class="form-control" asp-items="@(Model.SelectedListBookingTypes)">
+                    <option value="-1">Please select one</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleMakes" class="control-label"></label>
+                <input type="hidden" name="VehicleMakeId" id="VehicleMakeId" value="" />
+                <select name="VehicleMakes" id="VehicleMakes" class="form-control" asp-items="@(Model.SelectedListVehicleMakes)">
+                    <option value="-1">Please select one</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleModels" class="control-label"></label>
+                <input type="hidden" name="VehicleModelId" id="VehicleModelId" value="" />
+                <select id="VehicleModels" class="form-control" asp-items="@(Model.SelectedListVehicleModels)">
+                    <option value="-1">Please select one</option>
+                </select>
+                 
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistrationNumber" class="control-label"></label>
+
+                <input name="RegistrationNumber" id="RegistrationNumber" class="form-control" asp-for="RegistrationNumber"  />
+                  
+                 <span asp-validation-for="RegistrationNumber"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="submitbtn" value="Book Service" onclick="checkValues()" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+     
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    function checkValues() {
+        var VehicleModelId = $("#VehicleModels").val();
+        $("#VehicleModelId").val(VehicleModelId);
+
+        var VehicleMakeId = $("#VehicleMakes").val();
+        $("#VehicleMakeId").val(VehicleMakeId);
+
+        var bookingTypeId = $("#BookingType").val();
+        $("#bookingTypeId").val(bookingTypeId);
+        debugger;
+
+    }
+    $(function () {
+        $('#VehicleMakes').prop('disabled', 'true');
+        $('#submitbtn').prop('disabled', 'true');
+        $('#VehicleModels').prop('disabled', 'true');
+        $("#BookingType").change(function () {
+            var BookingID = $("#BookingType").val();
+
+            if (BookingID == -1) {
+                $("#VehicleMakes").prop('selectedIndex', 0);
+                $('#VehicleMakes').empty().append('<option value="-1">Please select one</option>');
+                $('#VehicleMakes').prop('disabled', 'true');
+
+                $('#VehicleModels').prop('disabled', 'true');
+            }
+            else {
+                var url = '@Url.Action("GetVehicleMakes","Booking")';
+                $('#VehicleMakes').removeAttr('disabled');
+                $('#VehicleMakes').empty().append('<option value="-1">Please select one</option>');
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        $(data).each(function (index, returnitem) {
+                            $('#VehicleMakes').append('<option value="' + returnitem.makeId+'">'+ returnitem.make+'</option>');
+                             
+                        });
+                    }
+
+                });
+            }
+
+
+        });
+
+        $("#VehicleMakes").change(function () {
+            var VehicleMakesID = $("#VehicleMakes").val();
+            console.log(VehicleMakesID);
+            if (VehicleMakesID == -1) {
+                $("#VehicleModels").prop('selectedIndex', 0);
+                $('#VehicleModels').empty().append('<option value="-1">Please select one</option>');
+                $('#VehicleModels').prop('disabled', 'true');
+
+                $('#VehicleModels').prop('disabled', 'true');
+            }
+            else {
+                var url = '@Url.Action("GetVehicleModels","Booking")';
+                $('#VehicleModels').removeAttr('disabled');
+                $('#VehicleModels').empty().append('<option value="-1">Please select one</option>');
+                
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {makeid:VehicleMakesID},
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.length==0) {
+                            $("#VehicleModels").prop('selectedIndex', 0);
+                            $('#VehicleModels').empty().append('<option value="-1">Please select one</option>');
+                            $('#VehicleModels').prop('disabled', 'true');
+
+                            $('#VehicleModels').prop('disabled', 'true');
+                        }
+                        $(data).each(function (index, returnitem) {
+                            $('#VehicleModels').append('<option value="' + returnitem.modelId+'">'+ returnitem.model+'</option>');
+                            console.log(returnitem);
+                        });
+                    }
+                });
+            }
+        });
+
+        $("#VehicleModels").change(function () {
+            if (checkValues() < 0) {
+                $('#submitbtn').prop('disabled', 'true');
+            } else {
+                $('#submitbtn').removeAttr('disabled');
+            }
+
+        });
+    });
+</script>
